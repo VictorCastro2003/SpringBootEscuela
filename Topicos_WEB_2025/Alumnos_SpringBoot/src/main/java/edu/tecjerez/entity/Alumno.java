@@ -34,7 +34,7 @@ public class Alumno {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "alumno", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AlumnoMaterias> materias = new ArrayList<>();
-
-    @Transient
-    private List<AlumnoActividades> actividades = new ArrayList<>();
+    
+@OneToMany(fetch = FetchType.LAZY, mappedBy = "alumno", cascade = CascadeType.ALL, orphanRemoval = true)
+private List<AlumnoActividades> actividades = new ArrayList<>();
 }

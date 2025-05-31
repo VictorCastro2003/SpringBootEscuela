@@ -109,15 +109,12 @@ public class AlumnoRestController {
         // Actividades
         List<AlumnoActividades> listaActividades = new ArrayList<>();
         Set<Long> actividadesUnicas = new HashSet<>();
-        for (String idActividadStr : input.actividades) {
-            Long idActividad = Long.parseLong(idActividadStr);
-            if (actividadesUnicas.add(idActividad)) {
-                AlumnoActividades aa = new AlumnoActividades();
-                aa.setId(idActividad);
-                aa.setAlumno(nuevo);
-                listaActividades.add(aa);
-            }
-        }
+for (String cveActividad : input.actividades) {
+    AlumnoActividades aa = new AlumnoActividades();
+    aa.setCveActividad(cveActividad);  // ✅ asigna la clave, no el ID
+    aa.setAlumno(nuevo);
+    listaActividades.add(aa);
+}
         nuevo.setActividades(listaActividades);
 
         Alumno save = alumnoRepository.save(nuevo);

@@ -30,7 +30,7 @@ public class AlumnoActividades {
     private String cveActividad; // Ej: "ACT-101"
 
     @Transient
-    private String nombreActividad; // Ej: "Fútbol" o "Taller de Robótica"
+    private String nombreActividad; 
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
